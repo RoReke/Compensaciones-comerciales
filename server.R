@@ -10,9 +10,9 @@ server <- function(input, output, session) {
     })
   
   observeEvent(input$signin, {
-    if( input$pw == "Asociart01") {
+    if( input$pw == "1") {
       logged$logged <- TRUE
-      logged$pas <- "Asociart01"
+      logged$pas <- "1"
     } else if (input$pw == "Bona99") {
       logged$logged <- TRUE
       logged$pas <- "Bona99"
@@ -25,9 +25,9 @@ server <- function(input, output, session) {
     } else if (input$pw == "Tenorio99") {
       logged$logged <- TRUE
       logged$pas <- "Tenorio99"
-    } else if (input$pw == "administradorR") {
+    } else if (input$pw == "admin") {
         logged$logged <- TRUE
-        logged$pas <- "administradorR"
+        logged$pas <- "admin"
     } else {}
   })
   ## logica de ingreso segun clase: ejecutivo, supervisor o administrador ----
@@ -40,7 +40,7 @@ server <- function(input, output, session) {
               passwordInput("pw", "Contraseña"),
               actionButton("signin", "Ingresar")
             ), mainPanel(img(src='feedback.jpg',height = 400, weight = 400)))))
-        } else if(logged$logged == TRUE & logged$pas == "Asociart01") {
+        } else if(logged$logged == TRUE & logged$pas == "1") {
               return(
                 ui1
                 )
@@ -49,7 +49,7 @@ server <- function(input, output, session) {
                return(
                 ui2
                   )
-        } else if(logged$logged == TRUE & logged$pas == "administradorR") {
+        } else if(logged$logged == TRUE & logged$pas == "admin") {
                 return(
                 ui3
                 )  
