@@ -1,5 +1,0 @@
-ui <- fluidPage(
-    uiOutput("ui")
-    )
- 
-
